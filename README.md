@@ -80,7 +80,7 @@ Se creează un NFA pentru expresia (b|c)*
 Se creează un NFA pentru litera d
 Acestea sunt concatenate
 Structura NFA-ului ar arăta astfel:
-
+```
 s_inițială ---a---> s1 ---ε---> s2 --ε--> s3 ---b---> s4 --ε--> s6
                                |              |                  |
                                |              v                  v
@@ -88,3 +88,4 @@ s_inițială ---a---> s1 ---ε---> s2 --ε--> s3 ---b---> s4 --ε--> s6
                                |              ^         |
                                |              |         |
                                +--ε-----------+--ε------+
+```
