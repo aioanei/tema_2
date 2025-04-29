@@ -1,8 +1,6 @@
 def tokenize(pattern):
     l = []
     for c in pattern:
-        if c == '.':
-            l.append(('DOT', c))
         if c == '+':
             l.append(('PLUS', '+'))
         elif c == '*':
@@ -236,7 +234,7 @@ def test_regex(pattern, test_cases):
     for string, expected in test_cases:
         result = match_with_dfa(dfa_start, accepting_states, string)
         passed = result == expected
-        status = "✓" if passed else "✗"
+        status = "+" if passed else "-"
         print(f"  {status} '{string}': {'Matched' if result else 'Not matched'} (Expected: {expected})")
         if not passed:
             all_passed = False
