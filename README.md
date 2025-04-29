@@ -70,3 +70,21 @@ python main.py
 ```
 
 Acest lucru va executa toate cazurile de test și va raporta dacă acestea au trecut sau nu.
+
+Să luăm expresia regulată simplă: a(b|c)*d
+
+Când compile_node procesează această expresie:
+
+Se creează un NFA pentru litera a
+Se creează un NFA pentru expresia (b|c)*
+Se creează un NFA pentru litera d
+Acestea sunt concatenate
+Structura NFA-ului ar arăta astfel:
+
+s_inițială ---a---> s1 ---ε---> s2 --ε--> s3 ---b---> s4 --ε--> s6
+                               |              |                  |
+                               |              v                  v
+                               |             s5 ---c---> s6 --ε--> s7 --d--> s_finală
+                               |              ^         |
+                               |              |         |
+                               +--ε-----------+--ε------+
